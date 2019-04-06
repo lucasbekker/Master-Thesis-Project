@@ -1,0 +1,28 @@
+<!-- Title -->
+<h1>{{ site.title }}</h1>
+
+<!-- Add "logo" -->
+<img src="../image/gpu.jpg" alt="logo" style="width:280px;">
+
+<!-- Add site description from config -->
+<p>{{ site.description }}</p>
+
+<!-- Add search box -->
+
+<!-- Add link back to home, if not at home -->
+{% if page.url != "/" %}
+    <h1><a href="../">Home</a></h1>
+{% endif %}
+
+<!-- Add table of contents, if not at home -->
+{% if page.url != "/" %}
+    <div id="toc"></div>
+{% endif %}
+
+<!-- Add topics -->
+<h2>Topics</h2>
+<ul>
+{% for section in site.sections %}
+    <h4><li><a href="{{ section.url }}">{{ section.title }}</a></li></h4>
+{% endfor %}
+</ul>
